@@ -45,6 +45,12 @@ function expect(target) {
 //  / / / / /_/ / / / / / / /_/ / / / (__  )
 // /_/ /_/\__,_/_/ /_/ /_/\__,_/_/ /_/____/
 
+
+const Human = function({name, cool= false}){
+  this.name = name;
+  this.cool = cool;
+}
+
 let mady = new Human({
   name: 'Mady',
 });
@@ -61,6 +67,13 @@ let faith = new Human({
 // \__,_/\____/\__, /____/
 //            /____/
 
+const Dog = function({color, hungry= true, status= 'normal', owner} = {}){
+  this.color = color;
+  this.hungry = hungry;
+  this.status = status;
+  this.owner = owner;
+}
+
 let oz = new Dog({
   color: "red",
   hungry: false
@@ -72,6 +85,16 @@ let moonshine = new Dog({
 });
 
 let charlie = new Dog();
+
+Human.prototype.pet = function(status){
+  oz.status = 'happy';
+}
+
+Human.prototype.feed = function(moonshine){
+  moonshine.hungry = false;
+}
+
+
 
 //                     __           __  __    _                             __
 //    ____ ___  ____ _/ /_____     / /_/ /_  (_)____   _      ______  _____/ /__

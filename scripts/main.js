@@ -43,17 +43,17 @@ const Dog = function({color, hungry= true, status= 'normal', owner} = {}){
   this.owner = owner;
 }
 
-const Human = function({name, cool= false}){
+const Human = function({name, cool= false} = {}){
   this.name = name;
   this.cool = cool;
 }
 
-Human.prototype.pet = function(status){
-  oz.status = 'happy';
+Human.prototype.pet = function(dog){
+  dog.status = 'happy';
 }
 
-Human.prototype.feed = function(moonshine){
-  moonshine.hungry = false;
+Human.prototype.feed = function(dog){
+  dog.hungry = false;
 }
 
 //     __
